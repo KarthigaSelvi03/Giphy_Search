@@ -1,0 +1,26 @@
+﻿<div fxFlex="100" fxLayout="row" fxLayoutAlign="center">
+    <mat-card class="login-section" fxLayout="column" fxLayoutAlign="space-between center">
+        <mat-card-content fxFlex="75" class="login-controls">
+            <form [formGroup]="loginForm" *ngIf="!loading">
+                <div fxLayout="column" fxLayoutAlign="space-between center">
+                    <mat-form-field>
+                        <input matInput placeholder="Username" formControlName="username">
+                    </mat-form-field>
+                    <mat-form-field class="password">
+                        <input matInput placeholder="Password" formControlName="password">
+                    </mat-form-field>
+                </div>
+            </form>
+            <mat-error *ngIf="error">{{error}}</mat-error>
+            <mat-spinner [style.display]="loading ? 'block' : 'none'"></mat-spinner>
+        </mat-card-content>
+        <mat-card-actions fxFlex="25">
+            <button *ngIf="!loading" mat-raised-button color="primary" (click)="onSubmit()"
+                [disabled]="loginForm.invalid">Login</button>
+            <!-- <mat-spinner [style.display]="loading ? 'block' : 'none'"></mat-spinner> -->
+            <!-- <button md-raised-button [style.display]="loading ? 'block' : 'none'">
+                <mat-spinner></mat-spinner>
+            </button> -->
+        </mat-card-actions>
+    </mat-card>
+</div>

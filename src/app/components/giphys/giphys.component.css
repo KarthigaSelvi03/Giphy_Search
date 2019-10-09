@@ -1,0 +1,16 @@
+.search-input {
+  margin: 0px 20px 20px;
+}
+
+.search-input > input {
+  min-height: 35px;
+  margin-right: 20px;
+}
+
+.search-input > button {
+  margin-left: 10px;
+}
+
+.giphy-list {
+  height: 80%;
+}

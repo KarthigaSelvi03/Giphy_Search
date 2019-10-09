@@ -1,0 +1,32 @@
+<mat-toolbar color="primary" class="navigation-header">
+
+  <div>
+    <a routerLink="/home">Giphy</a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end">
+    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+      <li>
+        <a routerLink="giphys">Search</a>
+      </li>
+      <li>
+        <a routerLink="favourites">favourites</a>
+      </li>
+      <li>
+        <a (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
+<mat-card class="page" fxLayout="column">
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+      <!--this is a place for us to add side-nav code-->
+    </mat-sidenav>
+    <mat-sidenav-content fxLayout="column" fxLayoutAlign="center center">
+
+      <main class="main-content">
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</mat-card>
